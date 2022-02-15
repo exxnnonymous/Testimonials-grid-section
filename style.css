@@ -1,0 +1,160 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+
+    /* color */
+    --primary-Moderate-violet: hsl(263, 55%, 52%);
+    --primary-border-violet: hsl(263, 65%, 72%);
+--primary-Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--primary-Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--primary-White: hsl(0, 0%, 100%);
+
+--neutral-Light-gray: hsl(0, 0%, 81%);
+--neutral-shadow-gray: hsla(0, 0%, 50%, 0.1);
+--neutral-Light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Typography */
+    --primary-font-size:14px;
+    --balow-font:'Barlow Semi Condensed', sans-serif;
+}
+
+h2,p{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--neutral-Light-grayish-blue);
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: 80px 20px;
+    max-width: 1200px;
+}
+.testemonial-wrapper{
+    display: grid;
+    width: 100%;
+    font-family: var(--balow-font);
+    grid-gap: var(--grid-gap, 2rem);
+    align-items: flex-start;
+}
+
+.testemonial-card{
+    color: #fff;
+    padding: 20px 30px 30px;
+    border-radius:10px;
+    box-shadow: 1px 1px 10px  var(--neutral-shadow-gray);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-around;
+    gap: 1rem;
+    grid-auto-flow: column dense;
+}
+
+
+.testemonial-card:nth-child(1){
+    background-color: var(--primary-Moderate-violet);
+}
+.testemonial-card:nth-child(2){
+    background-color: var(--primary-Very-dark-grayish-blue);
+}
+.testemonial-card:nth-child(4){
+    background-color: var(--primary-Very-dark-blackish-blue);
+}
+.testemonial-card:nth-child(3){
+    background-color: var(--primary-White);
+    color: var(--primary-Very-dark-grayish-blue);
+}
+.testemonial-card:nth-child(5){
+    background-color: var(--primary-White);
+    color: var(--primary-Very-dark-grayish-blue);
+}
+
+.grid-2-col{
+    grid-row-end:span 2 ;
+}
+.grid-2-row{
+    grid-row-end:span 2 ;
+}
+
+
+
+.testemonial-card .profile-info{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 1.5rem;
+
+}
+.testemonial-card .profile-info .profile-pic{
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-border-violet);
+}
+.testemonial-card:nth-child(2) .profile-info .profile-pic{
+    border: none;
+}
+.testemonial-card:nth-child(3) .profile-info .profile-pic{
+    border: none;
+}
+.testemonial-card:nth-child(5) .profile-info .profile-pic{
+    border: none;
+}
+
+
+.testemonial-card .profile-info .profile-pic img{
+    width: 100%;
+    /* aspect-ratio: 1; */
+}
+.testemonial-card .profile-info .profile-name{
+    font-size: var(--primary-font-size);
+}
+.testemonial-card .profile-info .profile-name span{
+    opacity: .5;
+    display: block;
+    margin-top: 2px;
+}
+
+
+.testemonial-card-head{
+font-size: 20px;
+font-weight: 600;
+}
+.testemonial-card-description{
+opacity: .7;
+font-size: 16px;
+}
+
+
+
+@media (min-width:1024px) {
+    .testemonial-wrapper{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .grid-2-col{
+        grid-column-end:span 2 ;
+        grid-row-end: unset;
+    }
+    .second-grid-col{
+        grid-column:2 /span 2 ;
+        grid-row: 2 / 3;
+    }
+    .grid-2-row{
+        grid-row:1 / span 2 ;
+        grid-column: 4 /5;
+    }
+}
